@@ -1,23 +1,32 @@
-# MacMood
+# MacMood 🌙
 
-MacMood is a simple mood-tracking application built using Python and Kivy.
+MacMood is a desktop mood-tracking application built with Python and Kivy.
 
-## Features
+The application allows users to record their daily mood, write a short journal entry, view their previous mood records, and see basic mood statistics.
 
-- Select daily mood
-- Write a journal entry
-- Save mood history
-- View previous entries
-- View mood statistics
+## ✨ Features
 
-## Technologies Used
+- 😊 Daily mood selection
+- 📝 Personal journal entries
+- 💾 Save mood records locally
+- 📖 View mood history
+- 📊 View mood statistics
+- 🖥️ Desktop application interface
+
+## 🛠️ Technologies Used
 
 - Python
 - Kivy
-- File handling
-- Git & GitHub
+- File Handling
+- Git
+- GitHub
 
-## How to Run
+## 📂 Project Structure
 
-pip install kivy
-python main.py
+```text
+MacMood/
+│
+├── main.py
+├── index.html
+├── README.md
+└── .gitignore

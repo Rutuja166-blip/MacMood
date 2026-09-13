@@ -57,10 +57,12 @@ class MacMoodApp(App):
                 text=mood,
                 font_size=18
             )
+
             button.bind(
                 on_press=lambda instance, m=mood:
                 self.select_mood(m)
             )
+
             mood_layout.add_widget(button)
 
         main_layout.add_widget(mood_layout)
@@ -80,7 +82,11 @@ class MacMoodApp(App):
             size_hint_y=None,
             height=60
         )
-        save_button.bind(on_press=self.save_mood)
+
+        save_button.bind(
+            on_press=self.save_mood
+        )
+
         main_layout.add_widget(save_button)
 
         # History button
@@ -90,7 +96,11 @@ class MacMoodApp(App):
             size_hint_y=None,
             height=55
         )
-        history_button.bind(on_press=self.show_history)
+
+        history_button.bind(
+            on_press=self.show_history
+        )
+
         main_layout.add_widget(history_button)
 
         # Statistics button
@@ -100,7 +110,11 @@ class MacMoodApp(App):
             size_hint_y=None,
             height=55
         )
-        stats_button.bind(on_press=self.show_statistics)
+
+        stats_button.bind(
+            on_press=self.show_statistics
+        )
+
         main_layout.add_widget(stats_button)
 
         # Status
@@ -110,14 +124,17 @@ class MacMoodApp(App):
             size_hint_y=None,
             height=40
         )
+
         main_layout.add_widget(self.status)
 
         return main_layout
 
+    # Select mood
     def select_mood(self, mood):
         self.selected_mood = mood
         self.status.text = f"Mood selected: {mood}"
 
+    # Save mood
     def save_mood(self, instance):
 
         journal_text = self.journal.text.strip()
@@ -147,10 +164,12 @@ class MacMoodApp(App):
 
         self.journal.text = ""
 
+    # Show mood history
     def show_history(self, instance):
 
         if not os.path.exists("mood_history.txt"):
             history_text = "No mood history found."
+
         else:
             with open(
                 "mood_history.txt",
@@ -196,6 +215,7 @@ class MacMoodApp(App):
 
         popup.open()
 
+    # Show mood statistics
     def show_statistics(self, instance):
 
         counts = {
@@ -207,6 +227,7 @@ class MacMoodApp(App):
         }
 
         if os.path.exists("mood_history.txt"):
+
             with open(
                 "mood_history.txt",
                 "r",
@@ -214,9 +235,12 @@ class MacMoodApp(App):
             ) as file:
 
                 for line in file:
+
                     if line.startswith("Mood:"):
+
                         mood = line.replace(
-                            "Mood:", ""
+                            "Mood:",
+                            ""
                         ).strip()
 
                         if mood in counts:

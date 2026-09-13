@@ -1,19 +1,23 @@
 # MacMood
 
-MacMood is a mood-based web application designed to create a simple and engaging user experience.
+MacMood is a simple mood-tracking application built using Python and Kivy.
 
 ## Features
 
-- Mood-based interaction
-- Simple and user-friendly interface
-- Responsive web design
+- Select daily mood
+- Write a journal entry
+- Save mood history
+- View previous entries
+- View mood statistics
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
+- Python
+- Kivy
+- File handling
+- Git & GitHub
 
-## Project Status
+## How to Run
 
-🚧 Currently under development.
+pip install kivy
+python main.py
